@@ -3,9 +3,12 @@ Built an end-to-end loan default prediction model using Random Forest, SMOTE, an
 
 ## 📌 Problem Statement
 
-
 The goal of this project is to predict whether a customer will default on a loan using machine learning techniques.
+👉 This project aims to:
 
+- Identify high-risk customers
+- Improve loan approval decisions
+- Reduce default rates
 
 
 ## 📊 Dataset
@@ -13,6 +16,7 @@ The goal of this project is to predict whether a customer will default on a loan
 * Contains customer financial and demographic details
 * Target variable: `Default` (0 = No, 1 = Yes)
 
+## Project Workflow
 
 ### 1. Data Preprocessing
 
@@ -20,24 +24,29 @@ The goal of this project is to predict whether a customer will default on a loan
 * Encoded categorical variables
 * Feature scaling using StandardScaler
 
-### 2. Handling Imbalanced Data
+### 2. Exploratory Data Analysis (EDA)
+* Distribution analysis
+* Correlation heatmap
+* Class imbalance identification
+
+### 3. Handling Imbalanced Data
 
 * Used `class_weight='balanced'`
 * Applied SMOTE for better minority class learning
 
-### 3. Model Building
+### 4. Model Building
 
 * Logistic Regression (baseline)
 * Random Forest (improved model)
 
-### 4. Evaluation Metrics
+### 5. Evaluation Metrics
 
 * Precision
 * Recall
 * F1-score
 * Confusion Matrix
 
-### 5. Threshold Tuning
+### 6. Threshold Tuning
 
 * Adjusted probability threshold to balance precision and recall
 
