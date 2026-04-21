@@ -14,9 +14,6 @@ The goal of this project is to predict whether a customer will default on a loan
 * Target variable: `Default` (0 = No, 1 = Yes)
 
 
-
-## ⚙️ Approach
-
 ### 1. Data Preprocessing
 
 * Handled missing values
@@ -44,7 +41,6 @@ The goal of this project is to predict whether a customer will default on a loan
 
 * Adjusted probability threshold to balance precision and recall
 
----
 
 ## 📈 Results
 
@@ -54,7 +50,6 @@ The goal of this project is to predict whether a customer will default on a loan
 | Recall (Default)    | ~0.60      |
 | Precision (Default) | ~0.25–0.30 |
 
----
 
 ## 💡 Key Insights
 
@@ -62,7 +57,6 @@ The goal of this project is to predict whether a customer will default on a loan
 * Trade-off observed between precision and recall
 * Random Forest performed better than Logistic Regression
 
----
 
 ## 🚀 Business Impact
 
@@ -72,7 +66,6 @@ This model can help financial institutions:
 * Reduce loan defaults
 * Improve credit decision-making
 
----
 
 ## 🔮 Future Improvements
 
@@ -80,7 +73,6 @@ This model can help financial institutions:
 * Feature engineering
 * Hyperparameter tuning using GridSearchCV
 
----
 
 ## 🛠️ Tech Stack
 
