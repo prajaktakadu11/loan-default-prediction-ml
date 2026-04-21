@@ -6,14 +6,14 @@ Built an end-to-end loan default prediction model using Random Forest, SMOTE, an
 
 The goal of this project is to predict whether a customer will default on a loan using machine learning techniques.
 
---
+
 
 ## 📊 Dataset
 
 * Contains customer financial and demographic details
 * Target variable: `Default` (0 = No, 1 = Yes)
 
----
+
 
 ## ⚙️ Approach
 
