@@ -4,8 +4,8 @@ Built an end-to-end loan default prediction model using Random Forest, SMOTE, an
 ## 📌 Problem Statement
 
 The goal of this project is to predict whether a customer will default on a loan using machine learning techniques.
-👉 This project aims to:
 
+👉 This project aims to:
 - Identify high-risk customers
 - Improve loan approval decisions
 - Reduce default rates
@@ -62,26 +62,41 @@ The goal of this project is to predict whether a customer will default on a loan
 
 ## 💡 Key Insights
 
-* Model successfully identifies majority of defaulters
-* Trade-off observed between precision and recall
-* Random Forest performed better than Logistic Regression
+- Dataset is imbalanced (~11.5% defaulters)
+- Baseline Model (threshold = 0.6):
+     - Recall: 63% (3,721/5,900 detected)
+     - False Negatives: 2,179
+     - False Positives: 11,805
+- Tuned Model (threshold = 0.55):
+     - Precision: 37% (↑ from 24%)
+     - False Positives: 3,014 (↓ significantly)
+     - Recall: 29% (↓ from 63%)
+     - False Negatives: 4,163
+- Trade-off Observed:
+     - Increasing threshold reduces false alarms
+     - But significantly increases missed defaulters
+
+The final model was selected based on business impact rather than accuracy.
+
+Higher recall was prioritized to minimize False Negatives (missed defaulters)
+False positives were considered acceptable as they can be reviewed manually
 
 
 ## 🚀 Business Impact
 
-This model can help financial institutions:
+This solution can help financial institutions:
 
-* Identify high-risk customers
-* Reduce loan defaults
-* Improve credit decision-making
+- Identify high-risk customers before loan approval.
+- Reduce default-related financial losses.
+- Improve overall credit risk management.
 
 
 ## 🔮 Future Improvements
 
-* Use XGBoost for better performance
-* Feature engineering
-* Hyperparameter tuning using GridSearchCV
-
+- Implement advanced models (XGBoost, LightGBM)
+- Perform feature engineering for better predictive power
+- Use GridSearchCV for systematic hyperparameter tuning
+- Deploy the model using Flask or Streamlit
 
 ## 🛠️ Tech Stack
 
