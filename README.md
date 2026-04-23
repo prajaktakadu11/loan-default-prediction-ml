@@ -50,45 +50,52 @@ The goal of this project is to predict whether a customer will default on a loan
 
 * Adjusted probability threshold to balance precision and recall
 
-
 ## 📈 Results
 
-| Metric              | Value      |
-| ------------------- | ---------- |
-| Accuracy            | ~0.78      |
-| Recall (Default)    | ~0.60      |
-| Precision (Default) | ~0.25–0.30 |
+| Metric              | Value    |
+| ------------------- | -------- |
+| Accuracy            | ~0.68    |
+| Recall (Default)    | **0.70** |
+| Precision (Default) | ~0.22    |
 
 
 ## 💡 Key Insights
 
-- Dataset is imbalanced (~11.5% defaulters)
-- Baseline Model (threshold = 0.6):
-     - Recall: 63% (3,721/5,900 detected)
-     - False Negatives: 2,179
-     - False Positives: 11,805
-- Tuned Model (threshold = 0.55):
-     - Precision: 37% (↑ from 24%)
-     - False Positives: 3,014 (↓ significantly)
-     - Recall: 29% (↓ from 63%)
-     - False Negatives: 4,163
-- Trade-off Observed:
-     - Increasing threshold reduces false alarms
-     - But significantly increases missed defaulters
+* Dataset is imbalanced (~11.5% defaulters)
 
-The final model was selected based on business impact rather than accuracy.
+### Logistic Regression (Final Model)
 
-Higher recall was prioritized to minimize False Negatives (missed defaulters)
-False positives were considered acceptable as they can be reviewed manually
+* Recall: **70% (4,109 / 5,900 defaulters detected)**
+* False Negatives: **1,791 (lowest)**
+* False Positives: **14,625**
+
+### Random Forest (Comparison Model)
+
+* Recall: **63% (3,721 / 5,900 detected)**
+* False Negatives: **2,179**
+* False Positives: **11,805**
+
+
+## ⚖️ Trade-off Observed
+
+* Logistic Regression detects **388 more defaulters** than Random Forest
+* However, it produces **~2,800 more false positives**
+* Reducing false positives leads to **higher missed defaulters (risk)**
+
+
+## ✅ Final Model Selection
+
+* Selected **Logistic Regression (default threshold = 0.5)**
+* Reason: **Higher recall and lowest false negatives**, which is critical for this problem
 
 
 ## 🚀 Business Impact
 
-This solution can help financial institutions:
+This solution helps financial institutions:
 
-- Identify high-risk customers before loan approval.
-- Reduce default-related financial losses.
-- Improve overall credit risk management.
+* Identify **more high-risk customers** before loan approval
+* Reduce **financial losses by minimizing missed defaulters**
+* Support **better credit risk decision-making**, even with higher false alerts (manageable via manual review)
 
 
 ## 🔮 Future Improvements
